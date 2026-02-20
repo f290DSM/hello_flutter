@@ -41,7 +41,22 @@ class Tela1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [Image.network(imageUrl)]);
+    return ListView(
+      children: [
+        Image.network(imageUrl, height: 300, fit: BoxFit.cover),
+        Padding(
+          padding: EdgeInsets.all(16),
+          child: Text(
+            'Enzo Gabriel G S Silva',
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Text('Mussum ipsum cacildis vidis litrus abertis. '),
+        ),
+      ],
+    );
   }
 }
 
@@ -52,7 +67,35 @@ class Tela2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder(child: Center(child: Text('Pessoal')));
+    return Scaffold(
+      body: ListView(
+        children: [
+          Text(
+            'Sobre mim...',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 24),
+          Text('Hard Skills'),
+          SizedBox(height: 16),
+          Card(
+            child: ListTile(
+              leading: Icon(Icons.php),
+              title: Text('PHP'),
+              subtitle: Text('Laravel Master'),
+              trailing: Icon(Icons.check_outlined),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(backgroundImage: NetworkImage(imageUrl)),
+              title: Text('Título'),
+              subtitle: Text('Subtítulo'),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
