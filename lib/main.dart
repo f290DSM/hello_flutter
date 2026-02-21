@@ -43,7 +43,18 @@ class Tela1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Image.network(imageUrl, height: 300, fit: BoxFit.cover),
+        Container(
+          margin: EdgeInsets.all(16),
+          height: 300,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(imageUrl),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(32),
+            border: Border.all(color: Theme.of(context).primaryColor, width: 3),
+          ),
+        ),
         Padding(
           padding: EdgeInsets.all(16),
           child: Text(
@@ -119,8 +130,20 @@ class Tela2 extends StatelessWidget {
 class Tela3 extends StatelessWidget {
   const Tela3({super.key});
 
+  static final controller = PageController(initialPage: 0);
+
   @override
   Widget build(BuildContext context) {
-    return Placeholder(child: Center(child: Text('Projetos')));
+    return Scaffold(
+      body: PageView(
+        scrollDirection: Axis.vertical,
+        controller: controller,
+        children: [
+          Container(color: Colors.red.shade200),
+          Container(color: Colors.blue.shade200),
+          Container(color: Colors.green.shade200),
+        ],
+      ),
+    );
   }
 }
