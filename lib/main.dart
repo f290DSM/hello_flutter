@@ -76,7 +76,10 @@ class Tela2 extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 24),
-          Text('Hard Skills'),
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Text('Hard Skills'),
+          ),
           SizedBox(height: 16),
           Card(
             child: ListTile(
@@ -86,11 +89,25 @@ class Tela2 extends StatelessWidget {
               trailing: Icon(Icons.check_outlined),
             ),
           ),
+          // Card(
+          //   child: ListTile(
+          //     leading: CircleAvatar(backgroundImage: NetworkImage(imageUrl)),
+          //     title: Text('Título'),
+          //     subtitle: Text('Subtítulo'),
+          //   ),
+          // ),
+          Divider(height: 48, thickness: 5.0, indent: 16.0, endIndent: 16.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Text('Soft Skills'),
+          ),
+          SizedBox(height: 16),
           Card(
             child: ListTile(
-              leading: CircleAvatar(backgroundImage: NetworkImage(imageUrl)),
-              title: Text('Título'),
-              subtitle: Text('Subtítulo'),
+              leading: Icon(Icons.group),
+              title: Text('Trabalho em equipe'),
+              subtitle: Text('Facilidade de comunicação e colaboração'),
+              trailing: Icon(Icons.check_outlined),
             ),
           ),
         ],
